@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2939A08A-56CB-4E49-871D-F6A0959A76F9}</ProjectGuid>
+    <ProjectGuid>{8594A836-F4C7-4C57-B569-F78E27CCF258}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SocketCSharp.Server.Console</RootNamespace>
-    <AssemblyName>SocketCSharp.Server.Console</AssemblyName>
+    <RootNamespace>SocketCSharp.Server.ClienteConsole</RootNamespace>
+    <AssemblyName>SocketCSharp.Server.ClienteConsole</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logic\ServerSocketLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
