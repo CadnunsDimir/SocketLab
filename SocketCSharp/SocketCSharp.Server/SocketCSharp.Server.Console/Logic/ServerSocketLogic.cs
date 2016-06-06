@@ -5,17 +5,20 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using static SocketCSharp.Server.ConsoleApp.Logic.ServerSocketLogic;
 
-namespace SocketCSharp.Server.App.Logic
+namespace SocketCSharp.Server.ConsoleApp.Logic
 {
-    public class ServerSocketLogic
+    public class ServerSocketLogic : CallBackserver
     {
         private readonly Socket _serverSocket;
         private List<Socket> _clientSockets;
         private byte[] _buffer;
+        private CallBackserver _callbackPlayer;
 
-        public ServerSocketLogic()
+        public ServerSocketLogic(CallBackserver callback = null)
         {
+            _callbackPlayer = callback ?? this;
             _serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             _clientSockets = new List<Socket>();
             _buffer = new byte[1024];
@@ -66,6 +69,7 @@ namespace SocketCSharp.Server.App.Logic
             }
             else
             {
+                _callbackPlayer.Play(text.Replace("play song", ""));
                 response = DateTime.Now.ToLongDateString();
             }
             var data = Encoding.ASCII.GetBytes(response);
@@ -77,6 +81,28 @@ namespace SocketCSharp.Server.App.Logic
         {
             var socket = (Socket)ar.AsyncState;
             var received = socket.EndReceive(ar);
+        }
+
+        public void Play(string name)
+        {
+            Console.WriteLine("play song : " + name);
+        }
+
+        public void Stop()
+        {
+            Console.WriteLine("stop song");
+        }
+
+        public void Pause()
+        {
+            Console.WriteLine("pause song");
+        }
+
+        public interface CallBackserver
+        {
+            void Play(string name);
+            void Stop();
+            void Pause();
         }
     }
 }

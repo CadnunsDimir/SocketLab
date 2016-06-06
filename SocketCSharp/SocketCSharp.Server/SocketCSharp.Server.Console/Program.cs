@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SocketCSharp.Server.App.Logic;
-namespace SocketCSharp.Server.App
+using SocketCSharp.Server.ConsoleApp.Logic;
+namespace SocketCSharp.Server.ConsoleApp
 {
     class Program
     {
@@ -13,11 +13,9 @@ namespace SocketCSharp.Server.App
         static void Main(string[] args)
         {
             Console.Title = "Server";
-            server = new ServerSocketLogic();
+            server = new ServerSocketLogic(new MusicPlayer());
             server.Setup();
             Console.ReadKey();       
         }
-
-        
     }
 }

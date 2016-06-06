@@ -26,15 +26,24 @@ namespace SocketCSharp.Server.ClienteConsole
         {
             while (_clientSocket.Connected)
             {
-                Console.WriteLine("Enter your request:");
-                var request = Console.ReadLine();
-                var buffer = Encoding.ASCII.GetBytes(request);
-                _clientSocket.Send(buffer);
-                var responseBuffer = new byte[1024];
-                var rec = _clientSocket.Receive(responseBuffer);
-                var data = new byte[rec];
-                Array.Copy(responseBuffer, data, rec);
-                Console.WriteLine("Received: "+ Encoding.ASCII.GetString(data));
+                try
+                {
+
+                    Console.WriteLine("Enter your request:");
+                    var request = Console.ReadLine();
+                    var buffer = Encoding.ASCII.GetBytes(request);
+                    _clientSocket.Send(buffer);
+                    var responseBuffer = new byte[1024];
+                    var rec = _clientSocket.Receive(responseBuffer);
+                    var data = new byte[rec];
+                    Array.Copy(responseBuffer, data, rec);
+                    Console.WriteLine("Received: " + Encoding.ASCII.GetString(data));
+                }
+                catch (SocketException se)
+                {
+                    Console.WriteLine(se.Message);
+                    _clientSocket.Close();
+                }
             }
             Console.WriteLine("Disconected");
         }

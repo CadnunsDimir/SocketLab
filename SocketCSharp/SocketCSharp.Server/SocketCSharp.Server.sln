@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketCSharp.Server.Console", "SocketCSharp.Server.Console\SocketCSharp.Server.Console.csproj", "{2939A08A-56CB-4E49-871D-F6A0959A76F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketCSharp.Server.ConsoleApp", "SocketCSharp.Server.Console\SocketCSharp.Server.ConsoleApp.csproj", "{2939A08A-56CB-4E49-871D-F6A0959A76F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketCSharp.Server.ClienteConsole", "SocketCSharp.Server.ClienteConsole\SocketCSharp.Server.ClienteConsole.csproj", "{8594A836-F4C7-4C57-B569-F78E27CCF258}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "javaClienteTest", "javaClienteTest", "{E23D1DEC-DDBD-4CFE-A739-1C7254444797}"
+	ProjectSection(SolutionItems) = preProject
+		Program.java = Program.java
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

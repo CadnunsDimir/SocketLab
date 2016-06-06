@@ -7,8 +7,8 @@
     <ProjectGuid>{2939A08A-56CB-4E49-871D-F6A0959A76F9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SocketCSharp.Server.Console</RootNamespace>
-    <AssemblyName>SocketCSharp.Server.Console</AssemblyName>
+    <RootNamespace>SocketCSharp.Server.ConsoleApp</RootNamespace>
+    <AssemblyName>SocketCSharp.Server.ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\MusicPlayer.cs" />
     <Compile Include="Logic\ServerSocketLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
